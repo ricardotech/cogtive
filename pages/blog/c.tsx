@@ -22,7 +22,7 @@ export default function Create() {
 
   async function createPost() {
     const res = await axios.post(
-      "https://943e-2804-14c-3f89-8b76-2822-96e8-ec5f-9fc7.sa.ngrok.io/post",
+      "https://237a-2804-14c-3f89-8b76-c5f0-57a4-98fb-16f9.sa.ngrok.io/post",
       {
         title: title,
         description: description,

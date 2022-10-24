@@ -359,7 +359,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   try {
     const data = await axios.get(
-      "https://943e-2804-14c-3f89-8b76-2822-96e8-ec5f-9fc7.sa.ngrok.io/posts"
+      "https://237a-2804-14c-3f89-8b76-c5f0-57a4-98fb-16f9.sa.ngrok.io/posts"
     );
     return {
       props: {
