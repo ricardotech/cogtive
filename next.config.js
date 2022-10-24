@@ -5,6 +5,10 @@ const nextConfig = {
   images: {
     domains: ["i.ibb.co"],
   },
+  env: {
+    activeUser: process.env.activeUser,
+    authToken: process.env.authToken
+  },
 };
 
 module.exports = nextConfig;

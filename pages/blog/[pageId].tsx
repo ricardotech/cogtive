@@ -205,19 +205,6 @@ const BlogPage: NextPage<PageProps> = (props) => {
             Next reading
           </Text>
         </Flex>
-        {props.posts.map((post: Post, i: number) => {
-          if (i === props.posts.length - 1) return null;
-          if (i < 3)
-            return (
-              <SmallPost
-                key={i}
-                id={post.pageId}
-                title={post.title}
-                subtitle={post.description}
-                thumbnail={post.thumbnailURL}
-              />
-            );
-        })}
       </Flex>
       <Footer />
       <Drawer
@@ -305,18 +292,12 @@ interface Params extends ParsedUrlQuery {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const params = context.params as Params;
 
-  const token = "secret_mJ7FqLhhBz7FjjxcG0yFJTEEKELMk4uGMMkNBRbSCe1";
-  const notionVersion = "2021-05-11";
-
-  const headers = {
-    Authorization: `Bearer ${token}`,
-    "Notion-Version": notionVersion,
-  };
+  // secret_token -> my-integrations -> integration>secret_token
+  // userId -> secret_token #https://developers.notion.com/reference/get-users
 
   const notion = new NotionAPI({
-    activeUser: "021f7d6d-a2d5-4c3f-80d5-d8736742c77b",
-    authToken:
-      "1d107058bd7e8e38fd51bc94085c4bfe3859d24f305f6c2fe0cc488171ea6690751072ee555797c67fc9e940de0a46a58c5bf1caee32bd746f66ef0439ccaff018e1d0eaa263c9d796d8b69c622c",
+    activeUser: process.env.activeUser,
+    authToken: process.env.authToken,
   });
 
   try {
