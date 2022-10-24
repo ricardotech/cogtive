@@ -21,12 +21,15 @@ export default function Create() {
   };
 
   async function createPost() {
-    const res = await axios.post("https://943e-2804-14c-3f89-8b76-2822-96e8-ec5f-9fc7.sa.ngrok.io/post", {
-      title: title,
-      description: description,
-      thumbnailURL: thumbnailURL,
-      pageId: pageId,
-    });
+    const res = await axios.post(
+      "https://943e-2804-14c-3f89-8b76-2822-96e8-ec5f-9fc7.sa.ngrok.io/post",
+      {
+        title: title,
+        description: description,
+        thumbnailURL: thumbnailURL,
+        pageId: pageId,
+      }
+    );
 
     if (res.status === 201) {
       alert("Post criado com sucesso!");
@@ -45,7 +48,7 @@ export default function Create() {
       h="100vh"
       w="100%"
     >
-      <Header blog bg="#303030" />
+      <Header language="en" blog bg="#303030" />
       <Flex flexDir="column" w={300}>
         <Text color="#FFF" fontSize="1.5em" fontWeight="bold">
           Create Blog Post

@@ -191,7 +191,7 @@ const BlogPage: NextPage<PageProps> = (props) => {
         </Flex>
       ) : (
         <Flex flexDir="column">
-          <Header blog bg="#262626" />
+          <Header language="en" blog bg="#262626" />
           <NotionRenderer
             recordMap={props.blockMap}
             fullPage={true}
@@ -235,7 +235,7 @@ const BlogPage: NextPage<PageProps> = (props) => {
             backgroundColor: "#2F3437",
           }}
         >
-          <Header />
+          <Header language="en" />
 
           <Flex px="6" flexDir="column">
             <a href="/" />
@@ -321,7 +321,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   try {
     const recordMap = await notion.getPage(params.pageId.toString());
-    const posts = await axios.get("https://943e-2804-14c-3f89-8b76-2822-96e8-ec5f-9fc7.sa.ngrok.io/posts");
+    const posts = await axios.get(
+      "https://943e-2804-14c-3f89-8b76-2822-96e8-ec5f-9fc7.sa.ngrok.io/posts"
+    );
 
     return {
       props: {
