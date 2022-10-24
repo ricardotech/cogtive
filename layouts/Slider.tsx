@@ -5,7 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 
 import useMediaQuery from "../utils/mediaQuery";
 
-export default function Slider() {
+export default function Slider({ language = "en" }: { language: string }) {
   const { mobile, tablet, desktop } = useMediaQuery();
 
   function Item({ title, author }: { title: string; author: string }) {
@@ -63,12 +63,28 @@ export default function Slider() {
         interval={2000}
       >
         <Item
-          title="With COGTIVE we were able to improve our productivity from 52% to 64%!"
-          author="MILTON LIMA, PRODUCTION MANAGER AT COMPANY"
+          title={
+            language === "en"
+              ? "With COGTIVE we were able to improve our productivity from 52% to 64%!"
+              : "Com a cogtive tivemos um aumento produtivo de 52% para 64%!"
+          }
+          author={
+            language === "en"
+              ? "MILTON LIMA, PRODUCTION MANAGER AT COMPANY"
+              : "MILTON LIMA, GESTOR DE PRODUTO NA EMPRESA"
+          }
         />
         <Item
-          title="The people behind it are amazing. The support is incredible."
-          author="FREDERICK SOAF, CTO PHARMA.IO"
+          title={
+            language === "en"
+              ? "The people behind it are amazing. The support is incredible."
+              : "As pessoas por trás do projeto são incríveis e o suporte tambem"
+          }
+          author={
+            language === "en"
+              ? "FREDERICK SOAF, CTO PHARMA.IO"
+              : "FREDERICK SOAF, CTO PHARMA.IO"
+          }
         />
       </Carousel>
     </Flex>

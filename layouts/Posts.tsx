@@ -13,7 +13,13 @@ type Post = {
   pageId: string;
 };
 
-export default function Posts({ posts = [] }: { posts: [Post] | [] }) {
+export default function Posts({
+  posts = [],
+  language = "en",
+}: {
+  posts: [Post] | [];
+  language: string;
+}) {
   const { mobile, tablet, desktop } = useMediaQuery();
 
   const router = useRouter();
@@ -212,15 +218,15 @@ export default function Posts({ posts = [] }: { posts: [Post] | [] }) {
       justify="space-between"
     >
       <Heading mb="4" fontFamily="Work Sans" ml="2rem" color="#FFF">
-        Latest blog posts
+        {language === "en" ? "Latest blog posts" : "Ultimas postagens"}
       </Heading>
       {mobile && (
         <Flex flexDir="column" w="100%">
           {posts.map((post: Post, i: number) => {
             return (
               <MobilePost
-              key={i}
-              id={post.pageId}
+                key={i}
+                id={post.pageId}
                 tablet
                 thumbnail={post.thumbnailURL}
                 title={post.title}
@@ -244,8 +250,8 @@ export default function Posts({ posts = [] }: { posts: [Post] | [] }) {
 
               return (
                 <SmallPost
-                key={i}
-                tablet
+                  key={i}
+                  tablet
                   id={post.pageId}
                   thumbnail={post.thumbnailURL}
                   title={post.title}

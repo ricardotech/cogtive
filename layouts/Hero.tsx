@@ -56,7 +56,7 @@ export default function Hero({
             fontFamily="Work Sans"
             ml="2rem"
             fontSize={
-              title === "Event notification on your phone" ? "2.2rem" : "3rem"
+              title === "Event notification on your phone" ? "2.2rem" : "2.5rem"
             }
             w={title === "Event notification on your phone" ? 350 : 300}
             color={imageSrc === "/outstanding.png" ? "#FFCC17" : "#FFF"}
@@ -226,24 +226,24 @@ export default function Hero({
           pl="2rem"
           h={
             imageSrc === "/tv.png"
-              ? "30em"
+              ? "37em"
               : imageSrc === "/macbook.png"
-              ? "55em"
+              ? "60em"
               : imageSrc === "/devices.png"
-              ? "40em"
-              : "30em"
+              ? "45em"
+              : "32em"
           }
           pt={imageSrc === "/tv.png" ? "0" : "4rem"}
         >
           <Heading
             fontFamily="Work Sans"
-            fontSize={imageSrc === "/devices.png" ? "3rem" : "3.3rem"}
+            fontSize={imageSrc === "/devices.png" ? "3rem" : "3rem"}
             w={
               imageSrc === "/devices.png"
                 ? 460
                 : imageSrc === "/image.png"
                 ? 330
-                : 420
+                : 400
             }
             color={imageSrc === "/outstanding.png" ? "#FFCC17" : "#FFF"}
           >

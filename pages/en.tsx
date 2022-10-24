@@ -35,12 +35,12 @@ export default function Index(props: { posts: [Post] }) {
         <meta name="Cogtive" content="We Boost Your Factory" />
       </Head>
       <Flex flexDir="column" bg="#303030" align="center" w="100%">
-        <Header language="pt" home bg="#303030" />
+        <Header language="en" home bg="#303030" />
         <Hero
           imageSrc="/image.png"
           title="We Boost Your Factory"
-          subtitle="A COGTIVE é um SaaS (Software as a Service) que está expandindo o potencial da produtividade na indústria de manufatura, mudando a maneira como as lideranças enxergam o chão de fábrica, aumentando a eficiência produtiva e impactando resultados de negócios."
-          cta="Fale com um especialista"
+          subtitle="COGTIVE is a SaaS solution pushing the boundaries of productivity in the manufacturing industry, changing the way leadership overview the factory floor, enhances production efficiency and impacts business with real results."
+          cta="Talk to an expert"
           mt={-55}
           buttonColor="#FFF"
           onClick={() =>
@@ -49,17 +49,17 @@ export default function Index(props: { posts: [Post] }) {
             )
           }
         />
-        <Disclaimer language="pt" />
+        <Disclaimer language="en" />
         <Hero
           bg="#303030"
           imageSrc="/tv.png"
-          title="Todos os KPIs em tempo real."
-          subtitle="Em apenas um clique, acesse indicadores precisos do chão de fábrica com nossas funcionalidades."
-          secondSubtitle="Com foco em fornecer informações em tempo real para gerentes de produção e operadores de linha, a COGTIVE é uma solução para acompanhamento de todo o processo fabril com IoT, App ou câmeras trabalhando simultaneamente para a coleta de dados."
-          thirdSubtitle="Todos esses dados possuem integração com a nuvem, proporcionando ao seu time um Digital Twin (sua fábrica digitalizada), que demonstrará o potencial a ser explorado."
+          title="All the KPIs in real time."
+          subtitle="In just a click you can see precise factory floor indicators with our features."
+          secondSubtitle="Focused on data with real time feedback for production line operators and managers, COGTIVE is a solution for production tracking with IoT, App or Cameras working together to collect data."
+          thirdSubtitle="All this data has a cloud integration providing your team a digital twin view of the productive process and how much potential can be explored."
           imageRight={-150}
           imageMobile="contained"
-          cta="veja nossas funcionalidades"
+          cta="See all features"
           onClick={() =>
             router.push(
               "https://share.hsforms.com/1DKUEkuOlTuWXOpuXddZl_wdfrsv"
@@ -72,14 +72,14 @@ export default function Index(props: { posts: [Post] }) {
         />
         <Hero
           imageSrc="/outstanding.png"
-          title="coleta de dados"
-          secondTitle="Rápida e Fácil"
-          subtitle="Nosso time desenvolveu uma coleta de dados inovadora, com implementação simples e rápida
-          para digitalizar sua fábrica em um piscar de olhos."
+          title="Outstanding"
+          secondTitle="data collection"
+          subtitle="We worked hard to make your team work easily."
+          secondSubtitle="Fast implementation and simple collect data to digitalize your factory in a snap."
           imageRight={-150}
           buttonColor="#FFF"
           imageMobile="contained"
-          cta="Agende uma reunião"
+          cta="Schedule a call"
           onClick={() =>
             router.push(
               "https://share.hsforms.com/1DKUEkuOlTuWXOpuXddZl_wdfrsv"
@@ -91,11 +91,11 @@ export default function Index(props: { posts: [Post] }) {
         <Hero
           bg="#303030"
           imageSrc="/macbook.png"
-          title="Fábrica Virtualizada"
-          subtitle="Esse é o Flow View Kanban, capaz de oferecer aos gestores fácil visualização do que ocorre na fábrica para tomadas de decisão, auxiliando no alcance de resultados mais rápidos."
-          secondSubtitle="Acompanhe todos os processos por meio dos estágios e saiba quais lotes estão em produção ou em espera."
+          title="Factory Digital Twin"
+          subtitle="This is the Flow View Kanban, a feature that provides your team a clear digital twin of the productive process and how much potential can be explored in the factory."
+          secondSubtitle="Follow the processes using the stages to visualize what batch is running and the waiting ones."
           imageMobile="contained"
-          cta="conheça o sistema"
+          cta="inside the system"
           onClick={() =>
             router.push(
               "https://share.hsforms.com/1DKUEkuOlTuWXOpuXddZl_wdfrsv"
@@ -110,9 +110,9 @@ export default function Index(props: { posts: [Post] }) {
         />
         <Hero
           imageSrc="/devices.png"
-          title="Notificação de eventos no seu celular"
-          subtitle="Você escolhe que tipo de notificação alguém precisa receber."
-          secondSubtitle="As notificações de eventos são um recurso poderoso que permite que as pessoas acompanhem uma determinada tarefa durante os turnos."
+          title="Event notification on your phone"
+          subtitle="You choose what kind of notification someone needs to receive."
+          secondSubtitle="Event notifications is a powerful feature that allows people to keep track of a certain task during the shifts."
           imageMobile="overflowed"
           buttonColor="#FFF"
           mt={-280}
@@ -128,17 +128,17 @@ export default function Index(props: { posts: [Post] }) {
           }
         />
         <Benefits
-          language="pt"
-          title="Benefícios"
-          subtitle="Implementação simples e rápida para liberar o verdadeiro potencial do seu setor."
+          language="en"
+          title="Benefits"
+          subtitle="Simple and fast implementation to release your industry's true potential."
         />
         <DisclaimerAlt
-          title="Indústria 4.0 e filosofia de manufatura enxuta"
-          subtitle="Nossa equipe possui um amplo know-how na indústria de manufatura com mais de 25 anos de experiência desenvolvendo soluções incomuns."
-          cta="saiba mais sobre nossa empresa"
+          title="Industry 4.0 and Lean Manufacturing Philosophy"
+          subtitle="Our team has a wide know-how on the manufacturing industry with more than 25 years of expertise developing unusual solutions."
+          cta="more about us"
         />
-        <Slider language="pt" />
-        <Posts language="pt" posts={props.posts} />
+        <Slider language="en" />
+        <Posts language="en" posts={props.posts} />
       </Flex>
       <Footer language="en" />
     </>

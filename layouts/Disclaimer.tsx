@@ -4,7 +4,13 @@ import { Flex, Text } from "@chakra-ui/react";
 import { NextImage } from "../hocs/Image";
 import useMediaQuery from "../utils/mediaQuery";
 
-export default function Disclaimer({ bg = "#303030" }: { bg?: string }) {
+export default function Disclaimer({
+  bg = "#303030",
+  language = "en",
+}: {
+  bg?: string;
+  language: string;
+}) {
   const { mobile, tablet, desktop } = useMediaQuery();
 
   return (
@@ -19,10 +25,12 @@ export default function Disclaimer({ bg = "#303030" }: { bg?: string }) {
           align="center"
         >
           <Text color="#FFF" fontSize="1.3rem">
-            Trusted by companies{" "}
+            {language === "en"
+              ? "Trusted by companies "
+              : "Grandes empresas que usam "}
           </Text>
           <Text color="#406DFF" fontSize="1.3rem">
-            across the globe
+          {language === "en" ? "across the globe" : "COGTIVE"}
           </Text>
         </Flex>
       )}
@@ -36,10 +44,12 @@ export default function Disclaimer({ bg = "#303030" }: { bg?: string }) {
           align="center"
         >
           <Text color="#FFF" fontSize="1.8rem">
-            Trusted by companies{" "}
+            {language === "en"
+              ? "Trusted by companies "
+              : "Grandes empresas que usam "}
           </Text>
           <Text color="#406DFF" fontSize="1.8rem">
-            across the globe
+          {language === "en" ? "across the globe" : "COGTIVE"}
           </Text>
         </Flex>
       )}

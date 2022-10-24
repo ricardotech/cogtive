@@ -15,6 +15,7 @@ import Href from "../hocs/href";
 import { useRouter } from "next/router";
 
 export default function Header({
+  language = "en",
   bg = "#0D162B",
   aboutUs = false,
   home = false,
@@ -22,6 +23,7 @@ export default function Header({
   blog = false,
   contact = false,
 }: {
+  language: string;
   bg?: string;
   aboutUs?: boolean;
   home?: boolean;
@@ -191,6 +193,12 @@ export default function Header({
             <Href title="Solutions" active={solutions} href="" drawer />
             <Href title="Blog" active={blog} href="/blog" drawer />
             <Href title="Contact" active={contact} href="" last drawer />
+            <Href
+              title={language === "en" ? "PT" : "EN"}
+              href={language === "en" ? "/" : "/en"}
+              last
+              drawer
+            />
           </Flex>
         </DrawerContent>
       </Drawer>

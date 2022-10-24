@@ -35,7 +35,7 @@ export default function Button({
         alignItems: "center",
         height: underline ? "auto" : 55,
         backgroundColor: underline ? "transparent" : "#3D69F4",
-        width: 300,
+        width: 330,
         borderRadius: 10,
       }}
     >

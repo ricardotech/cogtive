@@ -29,13 +29,7 @@ export default function DisclaimerAlt({ title = "", subtitle = "", cta = "" }) {
           >
             {subtitle}
           </Text>
-          <Button
-            underline
-            mt="2em"
-            mb="1em"
-            label="more about us"
-            fontSize="1.3em"
-          />
+          <Button underline mt="2em" mb="1em" label={cta} fontSize="1.2em" />
         </Flex>
       )}
       {!mobile && (
@@ -52,13 +46,7 @@ export default function DisclaimerAlt({ title = "", subtitle = "", cta = "" }) {
           >
             {subtitle}
           </Text>
-          <Button
-            underline
-            mt="2em"
-            mb="1em"
-            label="more about us"
-            fontSize="1.3em"
-          />
+          <Button underline mt="2em" mb="1em" label={cta} fontSize="1.3em" />
         </Flex>
       )}
     </Flex>

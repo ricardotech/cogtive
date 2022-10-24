@@ -8,9 +8,11 @@ import useMediaQuery from "../utils/mediaQuery";
 export default function Benefits({
   title = "Benefits",
   subtitle = "Simple and fast implementation to release your industry's true potential.",
+  language = "en",
 }: {
   title: string;
   subtitle: string;
+  language: string;
 }) {
   const { mobile, tablet, desktop } = useMediaQuery();
 
@@ -58,16 +60,39 @@ export default function Benefits({
             </Heading>
           </Flex>
 
-          <Flex flexDir="column" p="2rem">
-            <Item mobile title="Clear view of the factory floor" />
-            <Item mobile title="Precise bottleneck identification" />
-            <Item mobile title="Productivity Gain" />
-            <Item mobile title="Lead Time & Stock Reduction" />
-            <Item mobile title="Better planning and following up production" />
-            <Item mobile title="Real time data for leadership decisions" />
-            <Item mobile title="Cost savings" />
-            <Item mobile title="WIP Control" />
-          </Flex>
+          {language === "en" ? (
+            <Flex flexDir="column" p="2rem">
+              <Item mobile title="Clear view of the factory floor" />
+              <Item mobile title="Precise bottleneck identification" />
+              <Item mobile title="Productivity Gain" />
+              <Item mobile title="Lead Time & Stock Reduction" />
+              <Item
+                mobile
+                title="Better planning and following up production"
+              />
+              <Item mobile title="Real time data for leadership decisions" />
+              <Item mobile title="Cost savings" />
+              <Item mobile title="WIP Control" />
+            </Flex>
+          ) : (
+            <Flex flexDir="column" p="2rem">
+              <Item mobile title="Visão clara do chão de fábrica" />
+              <Item mobile title="Identificação precisa do gargalo" />
+              <Item mobile title="Ganho de produtividade" />
+              <Item mobile title="Lead Time e Redução de Estoque" />
+              <Item
+                mobile
+                title="Melhor planejamento e acompanhamento
+                da produção"
+              />
+              <Item
+                mobile
+                title="Dados em tempo real para decisões de liderança"
+              />
+              <Item mobile title="Poupança de custos" />
+              <Item mobile title="Controle WIP" />
+            </Flex>
+          )}
 
           <Text
             fontFamily="Work Sans"
@@ -84,7 +109,9 @@ export default function Benefits({
             ml="2rem"
             mt="2em"
             mb="1em"
-            label="Request more info"
+            label={
+              language === "en" ? "Request more info" : "Conheça os benefícios"
+            }
             color="#FFF"
           />
         </Flex>
@@ -111,27 +138,56 @@ export default function Benefits({
               ml="2rem"
               mt="2em"
               mb="1em"
-              label="Request more info"
+              label={
+                language === "en"
+                  ? "Request more info"
+                  : "Conheça os benefícios"
+              }
               color="#FFF"
             />
           </Flex>
 
-          <Flex w="100%">
-            <Flex flexDir="column" p="2rem">
-              <Item
-                desktop
-                title="Better planning and following up production"
-              />
-              <Item desktop title="Real time data for leadership decisions" />
-              <Item desktop title="Cost savings" />
-              <Item desktop title="WIP Control" />
-            </Flex>
-            <Flex ml={"-3em"} flexDir="column" p="2rem">
-              <Item desktop title="Clear view of the factory floor" />
-              <Item desktop title="Precise bottleneck identification" />
-              <Item desktop title="Productivity Gain" />
-              <Item desktop title="Lead Time & Stock Reduction" />
-            </Flex>
+          <Flex w="100%" pl="2.5rem">
+            {language === "en" ? (
+              <Flex ml={"-3em"} flexDir="column" p="2rem">
+                <Item desktop title="Clear view of the factory floor" />
+                <Item desktop title="Precise bottleneck identification" />
+                <Item desktop title="Productivity Gain" />
+                <Item desktop title="Lead Time & Stock Reduction" />
+              </Flex>
+            ) : (
+              <Flex ml={"-3em"} flexDir="column" p="2rem">
+                <Item desktop title="Visão clara do chão de fábrica" />
+                <Item desktop title="Identificação precisa do gargalo" />
+                <Item desktop title="Ganho de produtividade" />
+                <Item desktop title="Lead Time e Redução de Estoque" />
+              </Flex>
+            )}
+            {language === "en" ? (
+              <Flex flexDir="column" p="2rem">
+                <Item
+                  desktop
+                  title="Better planning and following up production"
+                />
+                <Item desktop title="Real time data for leadership decisions" />
+                <Item desktop title="Cost savings" />
+                <Item desktop title="WIP Control" />
+              </Flex>
+            ) : (
+              <Flex flexDir="column" p="2rem">
+                <Item
+                  desktop
+                  title="Melhor planejamento e acompanhamento
+                  da produção"
+                />
+                <Item
+                  desktop
+                  title="Dados em tempo real para decisões de liderança"
+                />
+                <Item desktop title="Poupança de custos" />
+                <Item desktop title="Controle WIP" />
+              </Flex>
+            )}
           </Flex>
         </Flex>
       )}
@@ -157,27 +213,56 @@ export default function Benefits({
               ml="2rem"
               mt="2em"
               mb="1em"
-              label="Request more info"
+              label={
+                language === "en"
+                  ? "Request more info"
+                  : "Conheça os benefícios"
+              }
               color="#FFF"
             />
           </Flex>
 
-          <Flex w="100%">
-            <Flex flexDir="column" p="2rem">
-              <Item
-                tablet
-                title="Better planning and following up production"
-              />
-              <Item tablet title="Real time data for leadership decisions" />
-              <Item tablet title="Cost savings" />
-              <Item tablet title="WIP Control" />
-            </Flex>
-            <Flex ml={"-3em"} flexDir="column" p="2rem">
-              <Item tablet title="Clear view of the factory floor" />
-              <Item tablet title="Precise bottleneck identification" />
-              <Item tablet title="Productivity Gain" />
-              <Item tablet title="Lead Time & Stock Reduction" />
-            </Flex>
+          <Flex w="100%" pl="2.5rem">
+            {language === "en" ? (
+              <Flex ml={"-3em"} flexDir="column" p="2rem">
+                <Item tablet title="Clear view of the factory floor" />
+                <Item tablet title="Precise bottleneck identification" />
+                <Item tablet title="Productivity Gain" />
+                <Item tablet title="Lead Time & Stock Reduction" />
+              </Flex>
+            ) : (
+              <Flex ml={"-3em"} flexDir="column" p="2rem">
+                <Item tablet title="Visão clara do chão de fábrica" />
+                <Item tablet title="Identificação precisa do gargalo" />
+                <Item tablet title="Ganho de produtividade" />
+                <Item tablet title="Lead Time e Redução de Estoque" />
+              </Flex>
+            )}
+            {language === "en" ? (
+              <Flex flexDir="column" p="2rem">
+                <Item
+                  tablet
+                  title="Better planning and following up production"
+                />
+                <Item tablet title="Real time data for leadership decisions" />
+                <Item tablet title="Cost savings" />
+                <Item tablet title="WIP Control" />
+              </Flex>
+            ) : (
+              <Flex flexDir="column" p="2rem">
+                <Item
+                  tablet
+                  title="Melhor planejamento e acompanhamento
+                  da produção"
+                />
+                <Item
+                  tablet
+                  title="Dados em tempo real para decisões de liderança"
+                />
+                <Item tablet title="Poupança de custos" />
+                <Item tablet title="Controle WIP" />
+              </Flex>
+            )}
           </Flex>
         </Flex>
       )}
