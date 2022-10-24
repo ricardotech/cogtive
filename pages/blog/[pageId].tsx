@@ -210,6 +210,7 @@ const BlogPage: NextPage<PageProps> = (props) => {
           if (i < 3)
             return (
               <SmallPost
+                key={i}
                 id={post.pageId}
                 title={post.title}
                 subtitle={post.description}
@@ -320,7 +321,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   try {
     const recordMap = await notion.getPage(params.pageId.toString());
-    const posts = await axios.get("http://localhost:3001/posts");
+    const posts = await axios.get("https://943e-2804-14c-3f89-8b76-2822-96e8-ec5f-9fc7.sa.ngrok.io/posts");
 
     return {
       props: {

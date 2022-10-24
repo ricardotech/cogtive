@@ -219,7 +219,8 @@ export default function Posts({ posts = [] }: { posts: [Post] | [] }) {
           {posts.map((post: Post, i: number) => {
             return (
               <MobilePost
-                id={post.pageId}
+              key={i}
+              id={post.pageId}
                 tablet
                 thumbnail={post.thumbnailURL}
                 title={post.title}
@@ -243,7 +244,8 @@ export default function Posts({ posts = [] }: { posts: [Post] | [] }) {
 
               return (
                 <SmallPost
-                  tablet
+                key={i}
+                tablet
                   id={post.pageId}
                   thumbnail={post.thumbnailURL}
                   title={post.title}

@@ -278,6 +278,7 @@ const Blog = (props: { posts: [Post] }) => {
 
                 return (
                   <SmallPost
+                    key={i}
                     id={post.pageId}
                     title={post.title}
                     subtitle={post.description}
@@ -304,6 +305,7 @@ const Blog = (props: { posts: [Post] }) => {
 
                 return (
                   <SmallPost
+                    key={i}
                     id={post.pageId}
                     title={post.title}
                     subtitle={post.description}
@@ -330,6 +332,7 @@ const Blog = (props: { posts: [Post] }) => {
 
                 return (
                   <SmallPost
+                    key={i}
                     id={post.pageId}
                     title={post.title}
                     subtitle={post.description}
