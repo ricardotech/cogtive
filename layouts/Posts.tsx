@@ -221,7 +221,7 @@ export default function Posts({
         {language === "en" ? "Latest blog posts" : "Ultimas postagens"}
       </Heading>
       {mobile && (
-        <Flex flexDir="column" w="100%">
+        <Flex flexDir="column" w="100%" pl={desktop ? "2em" : "0"}>
           {posts.map((post: Post, i: number) => {
             return (
               <MobilePost
@@ -237,7 +237,7 @@ export default function Posts({
         </Flex>
       )}
       {!mobile && (
-        <Flex flexDir="column" w="100%">
+        <Flex flexDir="column" w="100%" pl={desktop ? "2em" : "0"}>
           <BigPost
             id={posts[posts.length - 1].pageId}
             thumbnail={posts[posts.length - 1].thumbnailURL}

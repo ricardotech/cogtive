@@ -75,6 +75,11 @@ export default function Header({
             <Href title="Solutions" active={solutions} href="" />
             <Href title="Blog" active={blog} href="/blog" />
             <Href title="Contact" active={contact} href="" last />
+            <Flex
+              style={{
+                width: 10,
+              }}
+            />
             <Href
               title={language === "en" ? "PT" : "EN"}
               href={language === "en" ? "/" : "/en"}

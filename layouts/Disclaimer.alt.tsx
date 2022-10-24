@@ -9,9 +9,9 @@ export default function DisclaimerAlt({ title = "", subtitle = "", cta = "" }) {
   const { mobile, tablet, desktop } = useMediaQuery();
 
   return (
-    <Flex flexDir="column" w="100%">
+    <Flex flexDir="column" w="100%" pl={desktop ? "4em" : "2em"}>
       {mobile && (
-        <Flex flexDir="column" mt="4em" w="100%" pb="4rem" pl="2rem">
+        <Flex flexDir="column" mt="4em" w="100%" pb="4rem">
           <Heading
             w={300}
             fontFamily="Work Sans"
@@ -33,7 +33,7 @@ export default function DisclaimerAlt({ title = "", subtitle = "", cta = "" }) {
         </Flex>
       )}
       {!mobile && (
-        <Flex flexDir="column" mt="2em" w="100%" pb="4rem" pl="2rem">
+        <Flex flexDir="column" mt="2em" w="100%" pb="4rem">
           <Heading fontFamily="Work Sans" fontSize="1.8rem" color="#FFF">
             {title}
           </Heading>

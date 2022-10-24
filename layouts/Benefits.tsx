@@ -53,7 +53,7 @@ export default function Benefits({
   return (
     <Flex py="10" bg={"#303030"} w="100%" justify="space-between">
       {mobile && (
-        <Flex flexDir="column">
+        <Flex flexDir="column" pl={desktop ? "2em" : "0"}>
           <Flex flexWrap="wrap" flexDir="column" w="100%" justify="center">
             <Heading fontFamily="Work Sans" ml="2rem" color="#FFF">
               {title}
@@ -117,7 +117,7 @@ export default function Benefits({
         </Flex>
       )}
       {desktop && (
-        <Flex flexDir="column" w="100%">
+        <Flex flexDir="column" pl={desktop ? "2em" : "0"} w="100%">
           <Flex flexWrap="wrap" flexDir="column" w="100%" justify="center">
             <Heading fontFamily="Work Sans" ml="2rem" color="#FFF">
               {title}
@@ -192,7 +192,7 @@ export default function Benefits({
         </Flex>
       )}
       {tablet && (
-        <Flex flexDir="column" w="100%">
+        <Flex flexDir="column" pl={desktop ? "2em" : "0"} w="100%">
           <Flex flexWrap="wrap" flexDir="column" w="100%" justify="center">
             <Heading fontFamily="Work Sans" ml="2rem" color="#FFF">
               {title}
