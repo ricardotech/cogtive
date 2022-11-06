@@ -1,6 +1,8 @@
 import styles from "../../styles/Home.module.css";
 import axios from "axios";
 
+import { parseISO, format } from "date-fns";
+
 import "react-notion-x/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 import "katex/dist/katex.min.css";
@@ -43,6 +45,7 @@ type Post = {
   description: string;
   thumbnailURL: string;
   pageId: string;
+  createdAt: string;
 };
 
 const Blog = (props: { posts: [Post] }) => {
@@ -59,16 +62,20 @@ const Blog = (props: { posts: [Post] }) => {
   const [open, setOpen] = React.useState<boolean>(false);
 
   function BigPost({
+    date = "",
     id = "",
     title = "",
     subtitle = "",
     thumbnail = "",
   }: {
+    date?: string;
     id: string;
     title: string;
     subtitle: string;
     thumbnail: string;
   }) {
+    const parsedTime = parseISO(date);
+    const formattedTime = format(parsedTime, "MMMM dd yyyy kk:mm");
     return (
       <Flex flexDir={!mobile ? "row" : "column"} py="2rem">
         <Flex
@@ -91,8 +98,11 @@ const Blog = (props: { posts: [Post] }) => {
           flexDir="column"
           mt={mobile ? "1.3em" : "0"}
           ml={mobile ? "0" : "1.8rem"}
-          justify="space-around"
+          justify="space-between"
         >
+          <Text color="#FFF" fontSize="0.8rem">
+            Posted {formattedTime}
+          </Text>
           <Flex flexDir="column">
             <Heading
               fontFamily="Work Sans"
@@ -110,16 +120,18 @@ const Blog = (props: { posts: [Post] }) => {
               {subtitle}
             </Text>
           </Flex>
-          <Button
-            mt="1em"
-            fontSize="1.2em"
-            underline
-            label="Read article"
-            onPress={() => {
-              setLoading(true);
-              router.push(`/blog/${id}`);
-            }}
-          />
+          <Flex flexDir="column">
+            <Button
+              mt="1em"
+              fontSize="1.4em"
+              underline
+              label="Read article"
+              onPress={() => {
+                setLoading(true);
+                router.push(`/blog/${id}`);
+              }}
+            />
+          </Flex>
         </Flex>
       </Flex>
     );
@@ -133,6 +145,7 @@ const Blog = (props: { posts: [Post] }) => {
     mobile = false,
     tablet = false,
     desktop = false,
+    date = "",
   }: {
     id: string;
     title: string;
@@ -141,7 +154,10 @@ const Blog = (props: { posts: [Post] }) => {
     mobile?: boolean;
     tablet?: boolean;
     desktop?: boolean;
+    date?: string;
   }) {
+    const parsedTime = parseISO(date);
+    const formattedTime = format(parsedTime, "MMMM dd yyyy kk:mm");
     return (
       <Flex
         flexDir={mobile ? "column" : "row"}
@@ -220,7 +236,7 @@ const Blog = (props: { posts: [Post] }) => {
               }}
             />
             <Text color="#FFF" textAlign="right" fontSize="0.5rem">
-              Posted in Sep. 20, 2022 12:35
+              Posted {formattedTime}
             </Text>
           </Flex>
         </Flex>
@@ -261,6 +277,7 @@ const Blog = (props: { posts: [Post] }) => {
           w="100%"
         >
           <BigPost
+            date={props.posts[props.posts.length - 1].createdAt}
             id={props.posts[props.posts.length - 1].pageId}
             thumbnail={props.posts[props.posts.length - 1].thumbnailURL}
             title={props.posts[props.posts.length - 1].title}
@@ -278,6 +295,7 @@ const Blog = (props: { posts: [Post] }) => {
 
                 return (
                   <SmallPost
+                    date={post.createdAt}
                     key={i}
                     id={post.pageId}
                     title={post.title}
@@ -305,6 +323,7 @@ const Blog = (props: { posts: [Post] }) => {
 
                 return (
                   <SmallPost
+                    date={post.createdAt}
                     key={i}
                     id={post.pageId}
                     title={post.title}
@@ -332,6 +351,7 @@ const Blog = (props: { posts: [Post] }) => {
 
                 return (
                   <SmallPost
+                    date={post.createdAt}
                     key={i}
                     id={post.pageId}
                     title={post.title}
@@ -359,7 +379,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   try {
     const data = await axios.get(
-      "https://237a-2804-14c-3f89-8b76-c5f0-57a4-98fb-16f9.sa.ngrok.io/posts"
+      "http://localhost:3001/posts"
     );
     return {
       props: {

@@ -223,16 +223,17 @@ export default function Posts({
       {mobile && (
         <Flex flexDir="column" w="100%" pl={desktop ? "2em" : "0"}>
           {posts.map((post: Post, i: number) => {
-            return (
-              <MobilePost
-                key={i}
-                id={post.pageId}
-                tablet
-                thumbnail={post.thumbnailURL}
-                title={post.title}
-                subtitle={post.description}
-              />
-            );
+            if (i < 4)
+              return (
+                <MobilePost
+                  key={i}
+                  id={post.pageId}
+                  tablet
+                  thumbnail={post.thumbnailURL}
+                  title={post.title}
+                  subtitle={post.description}
+                />
+              );
           })}
         </Flex>
       )}
@@ -247,17 +248,17 @@ export default function Posts({
           <Flex w="100%" overflowX="scroll">
             {posts.map((post: Post, i: number) => {
               if (i === posts.length - 1) return null;
-
-              return (
-                <SmallPost
-                  key={i}
-                  tablet
-                  id={post.pageId}
-                  thumbnail={post.thumbnailURL}
-                  title={post.title}
-                  subtitle={post.description}
-                />
-              );
+              if (i < 4)
+                return (
+                  <SmallPost
+                    key={i}
+                    tablet
+                    id={post.pageId}
+                    thumbnail={post.thumbnailURL}
+                    title={post.title}
+                    subtitle={post.description}
+                  />
+                );
             })}
           </Flex>
         </Flex>

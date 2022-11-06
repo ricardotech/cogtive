@@ -7,6 +7,7 @@ import { NextImage } from "../hocs/Image";
 import useMediaQuery from "../utils/mediaQuery";
 import Button from "../hocs/Button";
 import EquipmentModule from "../components/EquipmentModule";
+import Header from "../components/Header";
 
 export default function Hero({
   title = "",

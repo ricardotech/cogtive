@@ -303,7 +303,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   try {
     const recordMap = await notion.getPage(params.pageId.toString());
     const posts = await axios.get(
-      "https://237a-2804-14c-3f89-8b76-c5f0-57a4-98fb-16f9.sa.ngrok.io/posts"
+      "http://localhost:3001/posts"
     );
 
     return {

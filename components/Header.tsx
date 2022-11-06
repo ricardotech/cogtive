@@ -71,10 +71,8 @@ export default function Header({
         {!mobile && (
           <Flex>
             <Href title="Cogtive" active={home} href="/" />
-            <Href title="About us" active={aboutUs} href="" />
-            <Href title="Solutions" active={solutions} href="" />
+            <Href title="Resources" active={solutions} href="/resources" />
             <Href title="Blog" active={blog} href="/blog" />
-            <Href title="Contact" active={contact} href="" last />
             <Flex
               style={{
                 width: 10,
@@ -199,10 +197,8 @@ export default function Header({
           <Flex px="6" flexDir="column">
             <a href="/" />
             <Href title="Cogtive" active={home} href="/" drawer />
-            <Href title="About us" active={aboutUs} href="" drawer />
-            <Href title="Solutions" active={solutions} href="" drawer />
+            <Href title="Resources" active={solutions} href="/resources" drawer />
             <Href title="Blog" active={blog} href="/blog" drawer />
-            <Href title="Contact" active={contact} href="" last drawer />
             <Href
               title={language === "en" ? "PT" : "EN"}
               href={language === "en" ? "/" : "/en"}
